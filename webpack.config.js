@@ -32,6 +32,10 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new ExtractTextPlugin('/styles/[name].css'),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: 'node_modules/html-webpack-template/index.ejs',
+      appMountId: 'app'
+    })
   ],
 };
